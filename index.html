@@ -584,13 +584,17 @@ footer a{margin-left:1.2rem}
   /* ---- YouTube: click to load (privacy-friendly, fast) ---- */
   document.querySelectorAll('.video[data-yt]').forEach(function(box){
     var id=box.getAttribute('data-yt');
-    box.style.backgroundImage='url(https://i.ytimg.com/vi/'+id+'/hqdefault.jpg)';
+    var hi='https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg',lo='https://i.ytimg.com/vi/'+id+'/hqdefault.jpg';
+    box.style.backgroundImage='url('+lo+')';
+    var probe=new Image();
+    probe.onload=function(){if(probe.naturalWidth>320)box.style.backgroundImage='url('+hi+')'};
+    probe.src=hi;
     box.querySelector('.video-play').addEventListener('click',function(){
       if(location.protocol==='file:'){ /* YouTube blocks embeds on local files */
         window.open('https://youtu.be/'+id,'_blank','noopener');return;
       }
       var f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&hd=1';
       f.title='Michela Vella – harp performance';
       f.allow='accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen=true;
