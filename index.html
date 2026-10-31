@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Michela Vella | Harpist in Malta</title>
+<meta name="description" content="Michela Vella is a classically trained harpist in Malta performing live harp music for weddings, corporate events and productions. View videos and send a booking enquiry.">
+<meta name="theme-color" content="#f6edde">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Michela Vella | Harpist in Malta">
+<meta property="og:description" content="Live harp music for weddings, corporate events and productions across Malta.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero-harpist.jpg">
+
+<style>
+/* ---------- GENERAL ---------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+:root{
+  --cream:#f6edde; --paper:#fbf7f0; --ink:#2c241e; --muted:#5f554c;
+  --gold:#8f5a1c; --gold-light:#f0c48d; --brown:#4a3428; --tan:#7a5430; --line:#d9ccbb;
+  --serif:Georgia,'Times New Roman',serif; --sans:Arial,Helvetica,sans-serif;
+}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--serif);-webkit-text-size-adjust:100%}
+a{color:inherit}
+img{display:block;width:100%}
+h1,h2,h3,p{margin-top:0}
+p{line-height:1.7}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:.7rem 1rem;z-index:100}
+.skip:focus{left:0}
+
+.section{width:min(90%,76rem);margin:auto;padding:6.5rem 0}
+h2{margin-bottom:1.2rem;font-size:clamp(2.3rem,4.4vw,4.6rem);font-weight:400;line-height:1.02;letter-spacing:-.03em}
+.eyebrow{margin-bottom:1.1rem;color:var(--gold);font:700 .74rem/1.5 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+.button{display:inline-block;padding:.95rem 1.4rem;border-radius:999px;font:700 .8rem var(--sans);letter-spacing:.03em;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:.2s}
+.button-light{background:#f7ead8;color:var(--brown)}
+.button-light:hover{background:#fff}
+.button-dark{background:var(--brown);color:#fff}
+.button-dark:hover{background:#2c1d14}
+.button-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.button-ghost:hover{background:rgba(255,255,255,.14)}
+.lead{max-width:36rem;color:var(--muted)}
+
+/* ---------- HEADER ---------- */
+.site-header{position:sticky;z-index:50;top:0;display:flex;align-items:center;justify-content:space-between;height:92px;padding:8px max(5%,calc((100% - 76rem)/2));border-bottom:1px solid rgba(83,63,47,.15);background:var(--cream)}
+.brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.brand-logo{width:auto;height:64px;object-fit:contain}
+nav{display:flex;align-items:center;gap:2rem;font:.86rem var(--sans)}
+nav a{text-decoration:none}
+nav a:not(.nav-cta):hover{opacity:.6}
+.nav-cta{padding:.75rem 1.2rem;border:1px solid var(--brown);border-radius:999px}
+.nav-cta:hover{background:var(--brown);color:#fff}
+.menu-btn{display:none;width:46px;height:46px;border:1px solid var(--brown);border-radius:50%;background:transparent;cursor:pointer;padding:0;position:relative}
+.menu-btn span,.menu-btn span:before,.menu-btn span:after{position:absolute;left:13px;right:13px;height:2px;background:var(--brown);content:'';transition:.2s}
+.menu-btn span{top:21px}
+.menu-btn span:before{left:0;right:0;top:-6px}
+.menu-btn span:after{left:0;right:0;top:6px}
+.menu-btn[aria-expanded=true] span{background:transparent}
+.menu-btn[aria-expanded=true] span:before{top:0;transform:rotate(45deg)}
+.menu-btn[aria-expanded=true] span:after{top:0;transform:rotate(-45deg)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:calc(100svh - 92px);display:flex;align-items:center;overflow:hidden;background:#161412}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,12,10,.76) 0%,rgba(15,12,10,.45) 40%,rgba(15,12,10,.08) 72%)}
+.hero-copy{position:relative;z-index:2;width:min(90%,76rem);margin:0 auto;padding:4.5rem 0;color:#fff}
+.hero .eyebrow{color:var(--gold-light)}
+.hero h1{max-width:11ch;margin:0 0 1.4rem;font-size:clamp(3.6rem,6vw,6rem);font-weight:400;line-height:.95;letter-spacing:-.035em}
+.hero-lead{max-width:34rem;margin-bottom:2rem;color:rgba(255,255,255,.92);font-size:1.08rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem}
+
+/* ---------- SERVICES ---------- */
+.section-heading{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.2rem}
+.section-heading h2{max-width:11ch;margin-bottom:0}
+.section-heading>p{max-width:32rem;margin-bottom:.4rem;color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.service{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line)}
+.service img{aspect-ratio:4/5;object-fit:cover}
+.service-body{display:flex;flex-direction:column;flex:1;padding:1.6rem}
+.service h3{margin-bottom:.6rem;font-size:1.7rem;font-weight:400}
+.service p{color:var(--muted);font-size:.98rem}
+.service ul{margin:0 0 1.4rem;padding:0;list-style:none;font:.86rem/1.6 var(--sans);color:var(--ink)}
+.service li{padding:.35rem 0;border-top:1px solid var(--line)}
+.service .button{margin-top:auto;align-self:flex-start}
+
+/* ---------- ABOUT ---------- */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:5.5rem;align-items:start}
+.about-title h2{max-width:9ch}
+.about-portrait{width:72%;margin-top:2.5rem;aspect-ratio:4/5;object-fit:cover;object-position:center 38%}
+.about-copy{padding-top:1.7rem;color:#4d443d}
+.about-copy>p{max-width:39rem}
+.credentials{display:grid;grid-template-columns:repeat(2,1fr);margin-top:3rem;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.credentials div{padding:1.2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.credentials small{display:block;margin-bottom:.7rem;color:var(--gold);font:700 .68rem var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.credentials strong,.credentials span{display:block}
+.credentials strong{font-size:.95rem;font-weight:400}
+.credentials span{margin-top:.25rem;color:var(--muted);font-size:.85rem}
+
+/* ---------- VIDEOS ---------- */
+.videos-wrap{background:#241b15;color:#fff}
+.videos-wrap .eyebrow{color:var(--gold-light)}
+.videos-wrap .section-heading>p{color:rgba(255,255,255,.78)}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr));gap:1.4rem}
+.video-card{margin:0}
+.video{position:relative;aspect-ratio:16/9;background:#000 center/cover no-repeat;overflow:hidden}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-play{position:absolute;inset:0;width:100%;height:100%;border:0;background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,.05) 55%);cursor:pointer;display:grid;place-items:center;padding:0}
+.video-play i{display:block;width:76px;height:76px;border-radius:50%;background:rgba(247,234,216,.95);position:relative;transition:transform .2s}
+.video-play i:after{content:'';position:absolute;left:30px;top:22px;border-left:22px solid var(--brown);border-top:16px solid transparent;border-bottom:16px solid transparent}
+.video-play:hover i{transform:scale(1.08)}
+.video-card figcaption{padding-top:1rem;font-size:1rem;color:rgba(255,255,255,.88)}
+.video-card figcaption span{display:block;margin-top:.2rem;font:.78rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.video-more{margin-top:2.4rem}
+
+/* ---------- GALLERY ---------- */
+.performance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.performance-grid figure{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:#dfd3c4}
+.performance-grid img{height:100%;object-fit:cover;transition:transform .55s ease}
+.performance-grid figure:after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(28,20,15,.88),rgba(28,20,15,.2) 45%,transparent 72%);opacity:0;transition:.35s}
+.performance-grid figcaption{position:absolute;z-index:2;right:0;bottom:0;left:0;padding:1.4rem 1.5rem;color:#fff;opacity:0;transform:translateY(14px);transition:.35s}
+.performance-grid figcaption strong{display:block;margin-bottom:.35rem;font-size:1.2rem;font-weight:400}
+.performance-grid figcaption span{display:block;margin-bottom:.5rem;color:rgba(255,255,255,.82);font:.7rem var(--sans);letter-spacing:.09em;text-transform:uppercase}
+.performance-grid figcaption p{margin:0;color:rgba(255,255,255,.9);font-size:.9rem;line-height:1.5}
+.performance-grid figure:hover:after,.performance-grid figure:focus-within:after{opacity:1}
+.performance-grid figure:hover figcaption,.performance-grid figure:focus-within figcaption{opacity:1;transform:none}
+.performance-grid figure:hover img{transform:scale(1.025)}
+
+/* ---------- REPERTOIRE ---------- */
+.rep-wrap{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.rep-grid h3{margin-bottom:.7rem;font-size:1.5rem;font-weight:400}
+.rep-grid p{color:var(--muted);font-size:.98rem}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:52rem}
+.faq details{border-top:1px solid var(--line);padding:1.2rem 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-size:1.2rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';font:300 1.6rem/1 var(--sans);color:var(--gold)}
+.faq details[open] summary:after{content:'–'}
+.faq details p{margin:.9rem 0 0;color:var(--muted);max-width:44rem}
+
+/* ---------- BEYOND ---------- */
+.beyond{width:min(90%,68rem);padding-top:2rem}
+.beyond-card{display:grid;grid-template-columns:34% 66%;gap:3rem;padding:2.5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.beyond-card img{aspect-ratio:4/5;object-fit:cover}
+.beyond-card>div{align-self:center}
+.beyond-card h2{max-width:12ch;font-size:clamp(2.1rem,3.6vw,3.8rem)}
+.beyond-card p:not(.eyebrow){max-width:36rem;color:var(--muted)}
+
+/* ---------- ENQUIRY ---------- */
+.contact{width:100%;padding:5rem max(5%,calc((100% - 76rem)/2));background:var(--tan);color:#fff}
+.contact .eyebrow{color:#f5d3a6}
+.contact-head{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:2.5rem}
+.contact h2{max-width:11ch}
+.contact-head>div>p:not(.eyebrow){max-width:35rem;color:rgba(255,255,255,.9)}
+.direct-email{color:#fff;text-underline-offset:.25rem}
+form{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 1.4rem}
+.field{display:flex;flex-direction:column;gap:.45rem;min-width:0}
+.field.full{grid-column:1/-1}
+label{font:700 .74rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff}
+label em{font-style:normal;font-weight:400;text-transform:none;letter-spacing:0;opacity:.85}
+input,select,textarea{width:100%;border:1px solid rgba(255,255,255,.6);border-radius:0;background:rgba(255,255,255,.1);padding:.9rem 1rem;color:#fff;font:1rem var(--serif);outline:none}
+input[type=date],input[type=time]{color-scheme:dark}
+select option{color:#2c241e;background:#fff}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.7)}
+input:focus,select:focus,textarea:focus{border-color:#fff;background:rgba(255,255,255,.16)}
+textarea{min-height:9.5rem;resize:vertical;line-height:1.55}
+.hint{margin:0;color:rgba(255,255,255,.82);font:.78rem var(--sans)}
+.trap{position:absolute;left:-9999px;opacity:0}
+.submit-row{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:1.2rem;margin-top:.4rem}
+.submit{border:0;font-size:.85rem}
+.submit[disabled]{opacity:.6;cursor:wait}
+.form-note{margin:0;color:rgba(255,255,255,.85);font:.8rem var(--sans)}
+.status{grid-column:1/-1;margin:0;padding:1rem 1.2rem;font:.95rem/1.5 var(--sans);display:none}
+.status.ok{display:block;background:#e7f3e4;color:#1f4a1b}
+.status.err{display:block;background:#fbe6e2;color:#7a1f12}
+
+/* ---------- FOOTER ---------- */
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.2rem 2rem;width:min(90%,76rem);margin:auto;padding:2rem 0 3rem;color:var(--muted);font:.8rem var(--sans)}
+footer strong{color:var(--ink)}
+footer a{margin-left:1.2rem}
+
+/* ---------- RESPONSIVE ---------- */
+@media(hover:none){
+  .performance-grid figure:after{opacity:1}
+  .performance-grid figcaption{opacity:1;transform:none}
+  .performance-grid figcaption p{display:none}
+}
+@media(max-width:1000px){
+  .services,.rep-grid{grid-template-columns:1fr}
+  .service{flex-direction:row}
+  .service img{width:38%;aspect-ratio:auto;height:auto;min-height:100%}
+  .performance-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:850px){
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:.5rem 5% 1.5rem;background:var(--cream);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(44,36,30,.12)}
+  nav.open{display:flex}
+  nav a{padding:1rem 0;border-bottom:1px solid var(--line);font-size:1rem}
+  nav .nav-cta{margin-top:1rem;text-align:center;border:1px solid var(--brown)}
+  .split,.section-heading,.contact-head{grid-template-columns:1fr;gap:2rem}
+  .about-portrait{width:min(25rem,85%)}
+  .beyond-card{grid-template-columns:1fr}
+  .beyond-card img{width:min(22rem,80%)}
+  form{grid-template-columns:1fr}
+  .field.full,.submit-row{grid-column:auto}
+}
+@media(max-width:600px){
+  .site-header{height:72px}
+  .brand-logo{height:46px}
+  .hero{min-height:calc(92svh - 72px)}
+  .hero-image{object-position:58% center}
+  .hero:after{background:linear-gradient(0deg,rgba(15,12,10,.82),rgba(15,12,10,.1) 78%)}
+  .hero{align-items:flex-end}
+  .hero h1{font-size:clamp(3rem,14vw,4.6rem)}
+  .section{padding:4.5rem 0}
+  .service{flex-direction:column}
+  .service img{width:100%;aspect-ratio:4/5;min-height:0}
+  .performance-grid,.credentials{grid-template-columns:1fr}
+  .contact{padding-top:4rem;padding-bottom:4rem}
+  footer a{margin:0 1.2rem 0 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Michela Vella Harpist – home">
+    <img class="brand-logo" src="images/michela-vella-logo.png" alt="Michela Vella Harpist">
+  </a>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="mainNav"><span></span></button>
+  <nav id="mainNav" aria-label="Main navigation">
+    <a href="#services">Your event</a>
+    <a href="#about">About me</a>
+    <a href="#videos">Videos</a>
+    <a href="#events">Gallery</a>
+    <a href="#faq">FAQs</a>
+    <a class="nav-cta" href="#enquire">Enquire</a>
+  </nav>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-image" src="images/hero-harpist.jpg" alt="Close-up of Michela Vella performing on pedal harp" fetchpriority="high">
+  <div class="hero-copy">
+    <p class="eyebrow">Harpist in Malta · Weddings · Corporate · Productions</p>
+    <h1>Live harp music for your occasion.</h1>
+    <p class="hero-lead">I’m Michela Vella, a classically trained harpist based in Malta, creating an elegant atmosphere for weddings, corporate events and productions.</p>
+    <div class="hero-actions">
+      <a class="button button-light" href="#enquire">Enquire about your event</a>
+      <a class="button button-ghost" href="#videos">Watch &amp; listen</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Your event</p>
+      <h2>Music for every kind of occasion.</h2>
+    </div>
+    <p>Whether it is a ceremony, a drinks reception or a stage production, I will help you choose music that suits the setting and the moment.</p>
+  </div>
+
+  <div class="services">
+    <article class="service">
+      <img src="images/lever-harp-wedding.jpg" alt="Harp beside a candlelit wedding dinner table in a Maltese courtyard" loading="lazy">
+      <div class="service-body">
+        <h3>Weddings</h3>
+        <p>Music that follows your day from the first guest arriving to the last toast.</p>
+        <ul>
+          <li>Ceremony: processional, signing of the register, recessional</li>
+          <li>Welcome drinks and cocktail hour</li>
+          <li>Dinner and reception background music</li>
+        </ul>
+        <a class="button button-dark" href="#enquire" data-type="Wedding">Enquire about a wedding</a>
+      </div>
+    </article>
+
+    <article class="service">
+      <img src="images/formal-dinner-harp.jpg" alt="Harp playing in a grand historic hall during a formal dinner" loading="lazy" style="object-position:12% center">
+      <div class="service-body">
+        <h3>Corporate</h3>
+        <p>Refined live music that sets the tone without competing with the conversation.</p>
+        <ul>
+          <li>Galas, award evenings and conferences</li>
+          <li>Hotel and restaurant events</li>
+          <li>Product launches and private dinners</li>
+        </ul>
+        <a class="button button-dark" href="#enquire" data-type="Corporate">Enquire about a corporate event</a>
+      </div>
+    </article>
+
+    <article class="service">
+      <img src="images/harp-cello-private-event.jpg" alt="Harp and cello performing under warm stage lighting" loading="lazy">
+      <div class="service-body">
+        <h3>Productions</h3>
+        <p>Harp for concerts, collaborations, stage and filmed projects.</p>
+        <ul>
+          <li>Concerts and church performances</li>
+          <li>Collaborations with singers and ensembles</li>
+          <li>Harp &amp; cello duo available</li>
+        </ul>
+        <a class="button button-dark" href="#enquire" data-type="Production">Enquire about a production</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section split" id="about" style="padding-top:2rem">
+  <div class="about-title">
+    <p class="eyebrow">About me</p>
+    <h2>Music has always been part of my life.</h2>
+    <img class="about-portrait" src="images/harpist-portrait.jpg" alt="Michela Vella seated at the pedal harp" loading="lazy">
+  </div>
+
+  <div class="about-copy">
+    <p>My journey with the harp began at age nine — a moment of quiet fascination that grew into a lifelong calling. Over the years, the harp has taken me from the practice room to concert halls, cathedrals, gardens and events across Malta.</p>
+    <p>In 2025, I received my Diploma in Harp Performance from the Malta School of Music, studying under Ms Caroline Muscat. I also hold a Diploma in Violin Performance, giving me experience performing from both sides of an ensemble.</p>
+    <p>I currently perform with the Malta Youth Orchestra as well as at weddings, private celebrations and corporate events. I play both pedal and Celtic harp, and enjoy creating programmes that combine classical music with familiar contemporary pieces.</p>
+    <p>For each event, I work with my clients to choose music that suits the setting — whether that means carefully planning a wedding ceremony or simply creating the right atmosphere while guests arrive and mingle.</p>
+
+    <div class="credentials">
+      <div><small>Performance</small><strong>Diploma in Harp Performance</strong><span>Malta School of Music</span></div>
+      <div><small>Performance</small><strong>Diploma in Music Performance</strong><span>Violin</span></div>
+      <div><small>Orchestral</small><strong>Harpist</strong><span>Malta Youth Orchestra</span></div>
+      <div><small>Based in</small><strong>Malta</strong><span>Pedal &amp; Celtic harp</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<div class="videos-wrap" id="videos">
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Videos</p>
+        <h2>Watch &amp; listen.</h2>
+      </div>
+      <p>A taste of what to expect on the day. Press play to hear the harp in a real performance.</p>
+    </div>
+
+    <div class="video-grid">
+
+      <figure class="video-card">
+        <div class="video" data-yt="OF_AARaifcs">
+          <button class="video-play" type="button" aria-label="Play video: Live harp performance"><i></i></button>
+        </div>
+        <figcaption>Live harp performance<span>Michela Vella · Harp</span></figcaption>
+      </figure>
+
+      <!-- TO ADD ANOTHER VIDEO: copy the whole <figure> above, paste it here,
+           and replace OF_AARaifcs with the new video's ID
+           (the part after youtu.be/ and before the "?"). -->
+
+    </div>
+
+    <p class="video-more">
+      <a class="button button-light" href="https://youtube.com/playlist?list=PLBPZRVr_CUbrK9j-WqjYwsbeyFwyo62Yf" target="_blank" rel="noopener">More on YouTube</a>
+    </p>
+  </section>
+</div>
+
+<!-- GALLERY -->
+<section class="section" id="events">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Previous events</p>
+      <h2>A few moments from past performances.</h2>
+    </div>
+    <p>Weddings, private celebrations, hospitality events and orchestral performances across Malta.</p>
+  </div>
+
+  <div class="performance-grid">
+    <figure tabindex="0">
+      <img src="images/wedding-mass-harp.jpg" alt="Pedal harp arranged at the altar for a wedding Mass in Malta" loading="lazy">
+      <figcaption><strong>Wedding Mass</strong><span>Pedal harp · Ceremony</span><p>Pedal harp set beside the altar for a church wedding ceremony, surrounded by the couple’s floral arrangements.</p></figcaption>
+    </figure>
+
+    <figure tabindex="0">
+      <img src="images/hotel-harpist.jpg" alt="Harp beside a limestone wall and fresh flowers" loading="lazy">
+      <figcaption><strong>Garden &amp; Venue Setting</strong><span>Harp · Floral styling</span><p>A harp set against Maltese limestone with fresh seasonal flowers.</p></figcaption>
+    </figure>
+
+    <figure tabindex="0">
+      <img src="images/private-event-harp-cello.jpg" alt="Harp and cello performing together at a private event" loading="lazy">
+      <figcaption><strong>Private Event</strong><span>Harp &amp; cello · Live ensemble</span><p>Harp and cello performing together for an intimate private event.</p></figcaption>
+    </figure>
+
+    <figure tabindex="0">
+      <img src="images/phoenicia-harp-event.jpg" alt="Pedal harp at a hospitality event" loading="lazy" style="object-position:70% center">
+      <figcaption><strong>Reception &amp; Hospitality</strong><span>Solo pedal harp</span><p>Solo pedal harp for guest arrival and background music at a formal hospitality event.</p></figcaption>
+    </figure>
+
+    <figure tabindex="0">
+      <img src="images/orchestral-harpist.jpg" alt="Michela Vella performing on concert harp in an orchestral setting" loading="lazy" style="object-position:60% center">
+      <figcaption><strong>Orchestral Performance</strong><span>Malta Youth Orchestra</span><p>Concert harp in an orchestral setting as part of the Malta Youth Orchestra.</p></figcaption>
+    </figure>
+
+    <figure tabindex="0">
+      <img src="images/harp-voice-church.jpg" alt="Harpist accompanying a singer in a church" loading="lazy" style="object-position:55% center">
+      <figcaption><strong>Harp &amp; Voice</strong><span>Church performance</span><p>Harp accompanying a vocalist in a church setting.</p></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- REPERTOIRE -->
+<div class="rep-wrap">
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Repertoire</p>
+        <h2>Music you know and love.</h2>
+      </div>
+      <p>From timeless classical works to your favourite songs, arranged beautifully for harp. Have a particular piece in mind? Just ask.</p>
+    </div>
+    <div class="rep-grid">
+      <div><h3>Classical</h3><p>Timeless pieces for ceremonies, processionals and elegant dinners.</p></div>
+      <div><h3>Pop covers</h3><p>Familiar modern songs reimagined for harp, perfect for drinks receptions and cocktail hours.</p></div>
+      <div><h3>Film music</h3><p>Well-loved themes from the big screen, for a cinematic touch to your event.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <p class="eyebrow">FAQs</p>
+  <h2>Good to know.</h2>
+  <div class="faq">
+    <details>
+      <summary>How far in advance should I enquire?</summary>
+      <p>As early as you can, especially for weddings and for the busy summer and festive seasons. Last-minute enquiries are always welcome too — send the details and I will let you know whether I am free.</p>
+    </details>
+    <details>
+      <summary>Can I request specific songs?</summary>
+      <p>Absolutely. We can build the programme together, from the processional to the last dance of the evening, mixing classical, pop and film music.</p>
+    </details>
+    <details>
+      <summary>Which harp do you play?</summary>
+      <p>I play both pedal and Celtic harp, and will recommend the best one for your venue and the style of music.</p>
+    </details>
+    <details>
+      <summary>Do you perform with other musicians?</summary>
+      <p>Yes. As well as solo harp, I perform as a harp and cello duo and can collaborate with singers and other instrumentalists.</p>
+    </details>
+    <details>
+      <summary>How do I secure my date?</summary>
+      <p>Send me an enquiry using the form below. I will reply with availability and options, and we can confirm the details from there.</p>
+    </details>
+  </div>
+</section>
+
+<!-- BEYOND MUSIC -->
+<section class="section beyond" id="beyond">
+  <div class="beyond-card">
+    <img src="images/engineering-harp-project.jpg" alt="Mechanical engineering research project displayed beside a harp" loading="lazy">
+    <div>
+      <p class="eyebrow">Beyond music</p>
+      <h2>A second side of my work.</h2>
+      <p>Alongside my work as a harpist, I am a mechanical engineer and researcher at the University of Malta. My undergraduate research brought my two fields together through the development of a prosthetic-foot concept for pedal harpists, informed by biomechanical analysis of harp-pedal movement.</p>
+      <p>The work was subsequently presented and published at an international engineering conference.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY -->
+<section class="contact" id="enquire">
+  <div class="contact-head">
+    <div>
+      <p class="eyebrow">Booking enquiry</p>
+      <h2>Tell me about your event.</h2>
+    </div>
+    <div>
+      <p>Send me the details below and I’ll get back to you with my availability and the most suitable options for your event.</p>
+      <p>Prefer email? <a class="direct-email" href="mailto:michelavella.harp@gmail.com">michelavella.harp@gmail.com</a></p>
+    </div>
+  </div>
+
+  <form id="enquiryForm" action="https://formsubmit.co/michelavella.harp@gmail.com" method="POST">
+    <!-- FormSubmit settings -->
+    <input type="hidden" name="_subject" value="New harp booking enquiry from website">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input class="trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="field">
+      <label for="firstName">Name</label>
+      <input id="firstName" name="First name" type="text" autocomplete="given-name" required>
+    </div>
+    <div class="field">
+      <label for="lastName">Surname</label>
+      <input id="lastName" name="Surname" type="text" autocomplete="family-name" required>
+    </div>
+
+    <div class="field">
+      <label for="partnerFirst">Partner’s name <em>(optional)</em></label>
+      <input id="partnerFirst" name="Partner name" type="text">
+    </div>
+    <div class="field">
+      <label for="partnerLast">Partner’s surname <em>(optional)</em></label>
+      <input id="partnerLast" name="Partner surname" type="text">
+    </div>
+
+    <div class="field">
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+    </div>
+    <div class="field">
+      <label for="phone">Mobile number</label>
+      <input id="phone" name="Mobile" type="tel" autocomplete="tel" inputmode="tel" placeholder="+356 …" required>
+    </div>
+
+    <div class="field">
+      <label for="type">Type of event</label>
+      <select id="type" name="Event type" required>
+        <option value="" disabled selected>Select event type</option>
+        <option>Wedding</option>
+        <option>Corporate</option>
+        <option>Production</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="venue">Venue</label>
+      <input id="venue" name="Venue" type="text" placeholder="Venue or locality" required>
+    </div>
+
+    <div class="field">
+      <label for="date">Date</label>
+      <input id="date" name="Date" type="date" required>
+    </div>
+    <div class="field">
+      <label for="time">Time</label>
+      <input id="time" name="Time" type="time" required>
+    </div>
+
+    <div class="field full">
+      <label for="message">Your message</label>
+      <textarea id="message" name="Message" required></textarea>
+      <p class="hint">This message fills itself in as you complete the form. Feel free to edit it or add anything else, such as music requests or the length of time you need.</p>
+    </div>
+
+    <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+
+    <div class="submit-row">
+      <button class="button button-light submit" id="submitBtn" type="submit">Send enquiry</button>
+      <p class="form-note">Your enquiry will be sent directly to my email.</p>
+    </div>
+  </form>
+</section>
+</main>
+
+<footer>
+  <div><strong>Michela Vella</strong> · Harpist · Malta</div>
+  <div>
+    <a href="mailto:michelavella.harp@gmail.com">Email</a>
+    <a href="https://www.instagram.com/michelavella.harpist/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://youtube.com/playlist?list=PLBPZRVr_CUbrK9j-WqjYwsbeyFwyo62Yf" target="_blank" rel="noopener">YouTube</a>
+  </div>
+  <span>© 2026 Michela Vella</span>
+</footer>
+
+<script>
+(function(){
+  /* ---- Mobile menu ---- */
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('mainNav');
+  function closeMenu(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A')closeMenu()});
+
+  /* ---- YouTube: click to load (privacy-friendly, fast) ---- */
+  document.querySelectorAll('.video[data-yt]').forEach(function(box){
+    var id=box.getAttribute('data-yt');
+    box.style.backgroundImage='url(https://i.ytimg.com/vi/'+id+'/hqdefault.jpg)';
+    box.querySelector('.video-play').addEventListener('click',function(){
+      if(location.protocol==='file:'){ /* YouTube blocks embeds on local files */
+        window.open('https://youtu.be/'+id,'_blank','noopener');return;
+      }
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+      f.title='Michela Vella – harp performance';
+      f.allow='accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen=true;
+      box.innerHTML='';box.appendChild(f);
+    });
+  });
+
+  /* ---- Enquiry form ---- */
+  var form=document.getElementById('enquiryForm'),
+      msg=document.getElementById('message'),
+      status=document.getElementById('formStatus'),
+      sub=document.getElementById('submitBtn'),
+      edited=false;
+  var $=function(id){return document.getElementById(id)};
+
+  var today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+  $('date').min=today.toISOString().slice(0,10);
+
+  function nice(d){
+    if(!d)return'[date]';
+    var p=d.split('-');return new Date(+p[0],+p[1]-1,+p[2]).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  }
+  function build(){
+    var t=$('type').value,
+        type=t==='Wedding'?'wedding':t==='Corporate'?'corporate event':t==='Production'?'production':'[type of event]',
+        venue=$('venue').value.trim()||'[venue]',
+        time=$('time').value||'[time]',
+        pf=$('partnerFirst').value.trim(),
+        pl=$('partnerLast').value.trim(),
+        name=($('firstName').value.trim()+' '+$('lastName').value.trim()).trim(),
+        sign=name?'\n\nKind regards,\n'+name+(pf?' & '+pf+(pl?' '+pl:''):''):'';
+    return 'Hello! '+(pf?'We':'I')+' would like to enquire about your availability and rates for live harp music at '+(pf?'our ':'my ')+type+' on '+nice($('date').value)+' at '+venue+', starting at around '+time+'. Could you please let us know what options you offer and how we can reserve the date? Thank you very much!'+sign;
+  }
+  function refresh(){if(!edited)msg.value=build()}
+  msg.addEventListener('input',function(){edited=true});
+  ['firstName','lastName','partnerFirst','partnerLast','type','venue','date','time'].forEach(function(id){
+    $(id).addEventListener('input',refresh);$(id).addEventListener('change',refresh);
+  });
+  refresh();
+
+  /* Service buttons preselect the event type */
+  document.querySelectorAll('[data-type]').forEach(function(a){
+    a.addEventListener('click',function(){$('type').value=a.getAttribute('data-type');refresh()});
+  });
+
+  /* Send without leaving the page */
+  form.addEventListener('submit',function(e){
+    if(location.protocol==='file:')return; /* normal submit when previewing locally */
+    e.preventDefault();
+    status.className='status';status.textContent='';
+    sub.disabled=true;sub.textContent='Sending…';
+    fetch('https://formsubmit.co/ajax/michelavella.harp@gmail.com',{
+      method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)
+    }).then(function(r){return r.json().then(function(j){return{ok:r.ok&&String(j.success)!=='false',j:j}})})
+    .then(function(res){
+      if(!res.ok)throw new Error(res.j&&res.j.message||'failed');
+      form.reset();edited=false;refresh();
+      status.className='status ok';
+      status.textContent='Thank you! Your enquiry has been sent. I will get back to you as soon as I can.';
+      status.scrollIntoView({behavior:'smooth',block:'center'});
+    }).catch(function(){
+      status.className='status err';
+      status.innerHTML='Sorry, something went wrong sending your enquiry. Please email me directly at <a href="mailto:michelavella.harp@gmail.com" style="color:inherit">michelavella.harp@gmail.com</a>.';
+    }).then(function(){sub.disabled=false;sub.textContent='Send enquiry'});
+  });
+})();
+</script>
+</body>
+</html>
